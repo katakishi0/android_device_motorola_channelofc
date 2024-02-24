@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_ocean.mk
+    $(LOCAL_DIR)/twrp_channel.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_ocean-user \
-    twrp_ocean-userdebug \
-    twrp_ocean-eng
+    twrp_channel-user \
+    twrp_channel-userdebug \
+    twrp_channel-eng
