@@ -89,6 +89,10 @@ BOARD_MOTOROLA_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system_ext syste
 BOARD_MOTOROLA_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # TWRP specific build flags
+TW_EXTRA_LANGUAGES := true
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 150
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -103,6 +107,9 @@ TW_H_OFFSET := -110
 TW_USE_FSCRYPT_POLICY := 1
 TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+
+# Backups
+TW_BACKUP_EXCLUSIONS := /data/fonts
 
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
